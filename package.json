@@ -1,0 +1,32 @@
+{
+  "name": "mymusicapp",
+  "version": "1.0.0",
+  "description": "music app list ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarishred/nodemusicapp.git"
+  },
+  "author": "Yari Ruiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yarishred/nodemusicapp/issues"
+  },
+  "homepage": "https://github.com/yarishred/nodemusicapp#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {}
+}

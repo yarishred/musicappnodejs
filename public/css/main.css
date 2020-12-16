@@ -1,0 +1,234 @@
+:root{
+    --mainColor: #fc9595; 
+    --secondColor:#7F96FF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: "Comfortaa", cursive;
+    text-align: center;
+    color: #333;
+    perspective: 1000px;
+
+}
+
+h1{
+    padding: 1rem 2rem;
+}
+
+a{
+    color:white;
+}
+
+i{
+   padding: 7px 9px;
+   margin: 0 10px;
+   background-color:var(--secondColor);
+   border-radius: 50%;
+   text-shadow: 0 0 5px #355aff;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    padding: 1rem 2rem;
+    background-color:var(--secondColor);
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+
+}
+
+nav ul{
+    display: flex;
+    text-shadow: 2px 2px 2px #355aff;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 10px 1rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+}
+
+nav ul .username {
+    color: #f8f2f2;
+    text-shadow: 2px 2px 2px #355aff;
+    font-weight: bold;
+    font-size: inherit;
+    background-color: #95a8fc;
+    border-radius: 10px;
+}
+
+nav ul li form button {
+    background: none;
+    font-family: "Comfortaa", cursive;
+    outline: none;
+    border:none;
+    font-size: inherit;
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+    font-weight: bold;
+}
+
+.container-showcase {
+    width: 100%;
+    height: 94.55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    background-color: var(--mainColor);
+    text-align: center;
+}
+.container-showcase h1{
+    font-size: 5rem;
+    text-transform: capitalize;
+}
+
+.container-showcase p{
+    font-size: 1.5rem;
+}
+
+.container-showcase > h1, p{
+    padding:1rem 4rem;
+    color: white;
+    text-shadow: 2px 2px 2px #fd5555;
+}
+
+.container-showcase a{
+    width: 15rem;
+    text-decoration: none;
+    background-color:var(--secondColor);
+    padding: 15px;
+    margin: 10px auto;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px #355aff;
+}
+.container-showcase a:hover{
+    background-color: #95a8fc;
+}
+
+.container-showcase-user{
+    width: 100%;
+    height: 94.55vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--mainColor);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px #fd5555;
+}
+
+.container-showcase-user .playlist-container{
+    width: 60%;
+    height: 600px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin:  auto;
+    margin-top: 14rem;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.welcome-user-text{
+    position: relative;
+    top: 25%;
+    transition: all 0.2s ease-in-out;
+}
+.welcome-user-text > h1, p{
+    color: white;
+    text-shadow: 2px 2px 2px #fd5555;
+}
+
+.welcome-user-text p{
+    margin:-15px 0;
+}
+
+.container3D{
+    width: 400px;
+    height: auto;
+    padding: 4rem 2rem;
+    perspective: 100;
+    transform-style: preserve-3d;
+}
+
+
+.card{
+    width: 350px;
+    height: 440px;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0 auto ;
+     /* box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2); */
+}
+.card img{
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+}
+
+.card h3{
+    padding: 20px;
+}
+
+.card p{
+    margin: -20px 0;
+}
+
+.addFiles-container{
+    position: absolute;
+    top:0;
+    left: 0;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+}
+ .songFormBtn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.addFiles-container i:hover{
+    background-color: #95a8fc;
+}
+
+.rotation{
+    transform: rotate(225deg);
+    transition: all 0.5s ease-in-out;
+
+}

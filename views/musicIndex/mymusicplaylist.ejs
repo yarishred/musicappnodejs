@@ -1,0 +1,78 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/addSong.css">
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <!-- Add Songs Form -->
+    <div class="container-addSong">
+      <div class="addSong-wrapper">
+        <form  id="addSong-form" action="/myMusicPlaylist" method="POST" enctype="multipart/form-data">
+          <h2>User</h2>
+          <p>Please add your songs</p>
+          <input
+            type="text"
+            name="songtitle"
+            id="songtitle"
+          />
+          <label for="songtitle">Song Title</label>
+          <input
+            type="text"
+            name="band"
+            id="band"
+          />
+          <label for="band">Band</label>
+          <br>
+
+          <hr>
+          <label for="songfile">Upload Your Song</label>
+          <input
+            type="file"
+            name="songfile"
+            id="songfile"
+          />
+          <hr>
+          <label for="cover">Upload Cover Album</label>
+          <input
+            type="file"
+            name="cover"
+            id="cover"
+          />
+          <h6>*Please upload 300x300 images</h6>
+          <hr>
+          <br><br>
+
+          <input type="hidden" />
+          <button class='submit-btn' type="submit">Add Song</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Playlist -->
+    <div class="container-showcase-user">
+      <div class="addFiles-container">
+        <button class="songFormBtn"><i class="fas fa-plus fa-2x"></i></button>
+
+        <h4>Add your files</h4>
+
+      </div>
+      <div class="welcome-user-text">
+        <h1>Welcome <%=users.userName %></h1>
+        <p>What do you want to listen today?</p>
+      </div>
+      <div class="playlist-container">
+        <% if(songs.length > 0) { %>
+          <% for(let song of songs) { %> 
+              <div class="container3D">
+                <div class="card">
+                  <img src="<%=song.cover %>" alt="">
+                  <h3><%=song.band%></h3>
+                  <p><%=song.songTitle%></p>
+                </div>
+              </div>
+          <% } %>
+        <% } else { %>
+          <h1>No songs found</h1>
+        <% } %>
+    </div>
+  <script src="javascript/app.js"></script>
+</body>

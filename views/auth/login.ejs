@@ -1,0 +1,71 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/login.css" />
+<body>
+  <main>
+    <div class="container-login-signUp">
+      <div class="cont-signUp">
+      </div>
+      <div class="signUp-button-container">
+        <h2>Create An Account</h2>
+        <p>
+          If you don't have an account, please create it.
+        </p>
+        <button class="signUp-btn">Sign Up</button>
+      </div>
+              <div class="signUp-login signUp">
+          <form id="main-form" action="/login" method="POST">
+            <h1>Sign Up</h1>
+            <input
+              type="text"
+              name="username"
+              id="username"
+            />
+            <label for="username">Username</label>
+  
+            <input
+              type="email"
+              name="email"
+              id="email"
+            />
+            <label for="email">Email</label>
+  
+            <input
+              type="password"
+              name="password"
+              id="password"
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="confirmpassword"
+              id="confirmpassword"
+            />
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="hidden" />
+            <button type="submit">Create Account</button>
+          </form>
+        </div>
+      <div class="signUp-login signIn">
+        <form  id="main-form" action="/myMusic" method="POST">
+          <h1>Sign In</h1>
+          <input
+            type="email"
+            name="email"
+            id="email"
+          />
+          <label for="email">Email</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+          />
+          <label for="password">Password</label>
+
+          <input type="hidden" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="javascript/login.js"></script>
+</body>

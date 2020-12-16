@@ -1,0 +1,143 @@
+
+
+body{
+    position: relative;
+}
+
+hr{
+    width: 80%;
+    border: 1px solid #eef0f756;
+    margin: auto;
+}
+
+.container-addSong{
+    width: 450px;
+    height: 0;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top:20%;
+    left:50%;
+    transform: translate(-50%, -20%);
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(127, 150, 255);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 30px;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.addSong-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 1.5rem 0 ;
+}
+
+.container-addSong .addSong-wrapper form {
+    width: 100%;
+    height: auto;
+    
+}
+
+.container-addSong .addSong-wrapper form h2, 
+.container-addSong .addSong-wrapper form p{
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+}
+
+
+
+
+.container-addSong .addSong-wrapper > input, label {
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+
+input#songfile, input#cover{
+    width: inherit;
+    height: 70px;
+    border-width:0px;
+    border:none;
+}
+
+#addSong-form h6{
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+    margin-top: -7px;
+    padding: 3px;
+}
+
+
+input[type=file]::-webkit-file-upload-button {
+    outline:none;
+    border:none;
+    font-family: "Comfortaa", cursive;
+    background-color: #fc9595;
+    padding: 15px 25px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px #fd5555;
+}
+input[type=file]::-webkit-file-upload-button:hover{
+    background-color: #f7a3a3;
+    text-shadow: 2px 2px 2px #fd5555;
+
+}
+
+
+
+.container-addSong .addSong-wrapper form input{
+    width: 20rem;
+    height: 50px;
+    outline: none;
+    border:none;
+    padding: 0 1rem;
+    margin-top: 20px;
+    font-family: "Comfortaa", cursive;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+
+
+.container-addSong .addSong-wrapper form label{
+    margin:  1rem 0;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #355aff;
+}
+
+
+.container-addSong .addSong-wrapper form button{
+    outline:none;
+    border:none;
+    font-family: "Comfortaa", cursive;
+    background-color: #fc9595;
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px #fd5555;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+ 
+.container-addSong .addSong-wrapper form button:hover{
+    background-color: #f7a3a3;
+    text-shadow: 2px 2px 2px #fd5555;
+
+}
