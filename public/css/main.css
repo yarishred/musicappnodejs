@@ -184,15 +184,21 @@ nav ul li form button {
     display: flex;
     border-radius: 10px;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem ;
     margin: 0 auto ;
-     /* box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2); */
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 .card img{
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 100%;
     height: auto;
+}
+
+.card:hover #playBtn{
+    opacity:0.8
 }
 
 .card h3{
@@ -202,6 +208,28 @@ nav ul li form button {
 .card p{
     margin: -20px 0;
 }
+
+.card #playBtn{
+    position: absolute;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    top:36%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card #playBtn i{
+    color: white;
+    text-shadow: 2px 2px 2px #355aff;
+    padding: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
+} 
+
+.card #playBtn i:hover{
+    background-color: #95a8fc;
+}
+
 
 .addFiles-container{
     position: absolute;

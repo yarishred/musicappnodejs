@@ -17,6 +17,8 @@ router.get('/myMusic', userController.getMyMusicPlaylist)
 router.post('/login', userController.postCreateAccount)
 router.post('/myMusic', userController.postLogin)
 router.post('/myMusicPlaylist', userController.postMyMusicPlaylist)
+router.post('/logout', userController.postLogout)
+
 
 
 

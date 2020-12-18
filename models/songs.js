@@ -12,14 +12,21 @@ const SongsSchema = new Schema({
         type: String,
         required: true,
     },
-    // songFile: {
-    //     type: String,
-    //     required: true,
-    // },
+    songFile: {
+        type: String,
+        required: true,
+    },
     cover: {
         type: String,
         required: true,
     },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Users',
+        required: true
+
+    }
+   
 
 })
 

@@ -65,6 +65,10 @@
               <div class="container3D">
                 <div class="card">
                   <img src="<%=song.cover %>" alt="">
+                  <audio id="songs">
+                    <source class="song" src="<%=song.songFile%> ">
+                  </audio>
+                  <button id="playBtn" type="submit"><i class="fa fa-play fa-2x"></i></button>
                   <h3><%=song.band%></h3>
                   <p><%=song.songTitle%></p>
                 </div>

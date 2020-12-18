@@ -5,8 +5,9 @@ const addSongContainer = document.querySelector(".container-addSong");
 const playListContainer = document.querySelector(".playlist-container");
 const welcomeTitle = document.querySelector(".welcome-user-text");
 
-//Switch for display form
+//Switch variables for display form and play audio
 let swSongFormButton = true;
+let actionAudioButton = false;
 
 //Functions
 const displaySongForm = () => {
@@ -27,12 +28,40 @@ const displaySongForm = () => {
 
 const rotateButton = () => {
   swSongFormButton
-    ? songFormButton.classList.remove("rotation") 
+    ? songFormButton.classList.remove("rotation")
     : songFormButton.classList.add("rotation");
 };
-
-
 
 //Event Button
 songFormButton.addEventListener("click", displaySongForm);
 songFormButton.addEventListener("click", rotateButton);
+
+//Reproduce Audio
+//Variables DOM
+const songAudio = document.querySelectorAll("#songs");
+const audioButton = document.querySelectorAll("#playBtn");
+
+//Variable count audio
+let songCounter = 0;
+
+
+//Event Button
+audioButton.forEach((audioBtn, index) => {
+  audioBtn.addEventListener("click", () => {
+    songCounter = index;
+    if (actionAudioButton) {
+      actionAudioButton = false;
+      songAudio[songCounter].pause();
+      for (let audioBtn of audioButton) {
+        audioBtn.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+      }
+    } else {
+      for (let audioBtn of audioButton) {
+        audioBtn.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
+      }
+      songAudio[songCounter].play();
+      actionAudioButton = true;
+
+    }
+  });
+});

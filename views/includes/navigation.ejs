@@ -3,19 +3,25 @@
     <h2>NodeJS Music App</h2>
     <nav class="main__nav">
       <ul class="login-menu">
-        <li class="username"><%= users.userName %></li>
+        <% if (!isAuthenticated) {%>
         <li>
           <a href="/login">Login</a>
         </li>
         <li>
           <a href="#">Sign Up</a>
         </li>
+        <% } %> <% if(isAuthenticated) { %>
+        <li class="username"><%= users %></li>
+        <li ><a href="/myMusic">My Music</a></li>
+
         <li>
-          <form action="#">
+          <form action="/logout" method="POST">
             <input type="hidden" />
             <button>Logout</button>
           </form>
         </li>
+
+        <%} %>
       </ul>
     </nav>
   </header>

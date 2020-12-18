@@ -9,6 +9,7 @@ exports.getIndex = (req, res, next) => {
     pageTitle: "Yari | My Music App",
     path: "/",
     users: "",
+    isAuthenticated: req.session.isLogged
   });
 };
 
@@ -49,6 +50,8 @@ exports.postCreateAccount = (req, res, next) => {
         path: "/login",
         pageTitle: "Yari | My Music App | Login",
         users: user,
+        isAuthenticated: false
+
       });
     })
     .catch((error) => {
@@ -57,6 +60,7 @@ exports.postCreateAccount = (req, res, next) => {
 };
 
 exports.postLogin = (req, res, next) => {
+  req.session.isLogged = true;
   const email = req.body.email;
   const password = req.body.password;
   Users.findOne({ email: email })
@@ -64,6 +68,7 @@ exports.postLogin = (req, res, next) => {
       if (user) {
         bcrypt.compare(password, user.password).then((doMatch) => {
           if (doMatch) {
+            req.session.userId = user._id;
             return res.redirect("/myMusic");
           } else {
             res.redirect("/login");
@@ -77,13 +82,18 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.getMyMusicPlaylist = (req, res, next) => {
-  Songs.find().then((mySongs) => {
+  const id = req.session.userId
+  Songs.find({userId: id})
+  .then((mySongs) => {
+    console.log(mySongs)
     res.render("musicIndex/mymusicplaylist.ejs", {
       pageTitle: "Yari | My Music Playlist",
       path: "/myMusic",
-      users: "",
+      users: '',
       songs: mySongs,
+      isAuthenticated: req.session.isLogged
     });
+    
   });
 };
 
@@ -91,21 +101,26 @@ exports.postMyMusicPlaylist = (req, res, next) => {
   const song = {
     songTitle: req.body.songtitle,
     band: req.body.band,
-    // songFile: req.body.songfile,
-    cover: req.file
+    songFile: req.files["songfile"][0],
+    cover: req.files["cover"][0],
   };
-  console.log(song.cover)
 
-  const cover = song.cover.path
+
+  const cover = song.cover.path;
+  const songFile = song.songFile.path;
 
   const songs = new Songs({
     songTitle: song.songTitle,
     band: song.band,
-    // songFile: song.songFile,
-    cover: cover
+    songFile: songFile,
+    cover: cover,
+    userId: req.session.userId
   });
   songs
     .save()
+    .then((result) => {
+      res.redirect("/myMusic");
+    })
     .then((result) => {
       res.redirect("/myMusic");
     })
@@ -113,3 +128,9 @@ exports.postMyMusicPlaylist = (req, res, next) => {
       console.log(err);
     });
 };
+
+exports.postLogout = (req, res, next) =>{
+  req.session.destroy(()=>{
+    res.redirect('/')
+  })
+}

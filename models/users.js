@@ -15,8 +15,22 @@ const UsersSchema = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    myPlaylist: {
+        songs: [
+            {
+                songId:{
+                    type: Schema.Types.ObjectId,
+                    ref: 'Songs',
+                    required: true
+                }
+            }
+        ]
     }
 })
+
+
+
 
 
 module.exports = mongoose.model('Users', UsersSchema)
