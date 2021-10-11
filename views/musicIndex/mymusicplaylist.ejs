@@ -3,6 +3,7 @@
 <body>
   <%- include('../includes/navigation.ejs') %>
   <main>
+
     <!-- Add Songs Form -->
     <div class="container-addSong">
       <div class="addSong-wrapper">
@@ -65,18 +66,75 @@
               <div class="container3D">
                 <div class="card">
                   <img src="<%=song.cover %>" alt="">
-                  <audio id="songs">
-                    <source class="song" src="<%=song.songFile%> ">
+                  <audio id="songs" class="song">
+                    <source class="mysong" src="<%=song.songFile%> ">
                   </audio>
-                  <button id="playBtn" type="submit"><i class="fa fa-play fa-2x"></i></button>
+                  <button id="playBtn" type="submit"><i class="fa fa-play"></i></button>
                   <h3><%=song.band%></h3>
                   <p><%=song.songTitle%></p>
+                  <button class="addToPlaylist"><i class="fas fa-plus fa-2x"></i></button>
                 </div>
               </div>
           <% } %>
         <% } else { %>
           <h1>No songs found</h1>
         <% } %>
+    </div>
+    <div class="playlist">
+      <!-- <div>
+        <h6>hfdflsdhf fhdfhdskfh fkdhfkd fhfd khfdkdhfkd</h6>
+        <h6>Artist</h6>
+        <h6>3:40</h6>
+      </div>
+      <div>
+        <h6>hfdflsdhf fhdfhdskfh fkdhfkd fhfd khfdkdhfkd</h6>
+        <h6>Artist</h6>
+        <h6>3:40</h6>
+      </div>
+      <div>
+        <h6>hfdflsdhf fhdfhdskfh fkdhfkd fhfd khfdkdhfkd</h6>
+        <h6>Artist</h6>
+        <h6>3:40</h6>
+      </div> -->
+  </div>
+    <div class="music-player">
+      <div class="songNow">
+        <div class="img-wrapper">
+          <img src="https://www.shazam.com/resources/291229600ef1fb473214ef503895c8185827152f/nocoverart.jpg" alt="">
+        </div>
+        <div class="song-info">
+          <h5>Artist</h5>
+          <h6>Song</h6>
+        </div>
+      </div>
+      <div class="controllerWrapper">
+        <div class="controls">
+          <button type="submit"><i class="fa fa-backward "></i></button>
+          <audio id='currentSong'>
+            <source class="song" src="http://localhost:5500/images/4cfd065d-6ede-4b4c-965e-2af21d2bd4e1.mp3">
+          </audio>
+          <button  class="btnPlay" type="submit"><i class="fa fa-play"></i></button>
+          <button  type="submit"><i class="fa fa-forward "></i></button>
+        </div>
+        <br>
+        <div class="counterPlayer">
+          <h6><span>-</span>3:40</h6>
+          <div class="progressBarWrapper">
+            <div class="progressBar"></div>
+          </div>
+          <h6>3:40</h6>
+        </div>
+      </div>
+      <div class="volumeControl">
+        <div>
+          <button class="display-playlist"><i class="material-icons" style="font-size:36px">playlist_play</i>
+          </button>
+        </div>
+        <div>
+          <input type="range" name="" id="">
+          <h5>Volume</h5>
+        </div>
+      </div>
     </div>
   <script src="javascript/app.js"></script>
 </body>

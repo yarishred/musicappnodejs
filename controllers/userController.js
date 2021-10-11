@@ -85,7 +85,6 @@ exports.getMyMusicPlaylist = (req, res, next) => {
   const id = req.session.userId
   Songs.find({userId: id})
   .then((mySongs) => {
-    console.log(mySongs)
     res.render("musicIndex/mymusicplaylist.ejs", {
       pageTitle: "Yari | My Music Playlist",
       path: "/myMusic",
