@@ -20,7 +20,7 @@ const app = express();
 const port = 5500;
 
 // Store Mongodb Session
-const MongoDBURI = "mongodb+srv://yarishred:Yari15447419@cluster0.vhvmi.mongodb.net/musicdb?retryWrites=true&w=majority";
+const MongoDBURI = "mongodb+srv://xxxxxxxxxxxx@cluster0.vhvmi.mongodb.net/musicdb?retryWrites=true&w=majority";
 ;
 const store = new MongoDBStore({
   uri: MongoDBURI,
